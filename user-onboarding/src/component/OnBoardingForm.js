@@ -12,7 +12,6 @@ const  OnBoardingForm = ({ errors, touched, values }) => { // Default props from
                 <div >
                    {touched.name && errors.name && <p className="red">{errors.name}</p>}
                     <Field 
-                        autoComplete="off"
                         type="text"
                         name="name"
                         placeholder="Name" 
@@ -22,23 +21,19 @@ const  OnBoardingForm = ({ errors, touched, values }) => { // Default props from
                 <div >
                     {touched.email && errors.email && <p className="red">{errors.email}</p>}
                     <Field 
-                        autoComplete="off"
                         type="email"
                         name="email"
                         placeholder="E-mail" 
                         value={values.email}
-
                     />
                 </div>
                 <div >
                 {touched.password && errors.password && <p className="red">{errors.password}</p>}
                     <Field 
-                        autoComplete="off"
                         type="password"
                         name="password"
                         placeholder="Password"
                         value={values.password}
-
                     />
                 </div>
             </div>
@@ -48,7 +43,7 @@ const  OnBoardingForm = ({ errors, touched, values }) => { // Default props from
                         type="checkbox" 
                         id="tos" 
                         name="tos" 
-                        // checked={values.tos}
+                        checked={values.tos}
 
                     />
                 <button
@@ -74,11 +69,11 @@ const FormikOnboardingForm = withFormik({  // withFormik is acts like a HOC and 
     //THIS CONNECTS THE DATA IN THE FORM TO THE HANDLERS AND THE KEY:VALUES ALLOW FOR PASSING IN DEFAULT OR CUSTOM DATA TO THE FORM INITIALLY
    mapPropsToValues ( {name,  password, email, tos, userType}) {
     return {
-        name: "",
-        password: "",
-        email: "",
+        name: name || "",
+        password: password || "",
+        email:email || "",
         tos: tos,
-        userType: "Full-Time"
+        userType: userType || "Full-Time"
     };
    },
 
