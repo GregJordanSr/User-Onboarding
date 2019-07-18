@@ -1,7 +1,7 @@
 import React from 'react';
 import OnBoardingForm from './component/OnBoardingForm';
 
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
