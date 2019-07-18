@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from "yup";
+import './onboarding.css';
 
 const  OnBoardingForm = ({ errors, touched, values }) => { // Default props from Formik that allow for error reporting and to see if an input field has been touched previously and allow the user not to see validation errors if they are typing in that field for the first time.
     return (
@@ -47,6 +48,7 @@ const  OnBoardingForm = ({ errors, touched, values }) => { // Default props from
 
                     />
                 <button
+                    className="submit-button"
                     type="submit"
                 >
                     Submit &rarr;
